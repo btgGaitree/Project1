@@ -1,8 +1,9 @@
-import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, TextInput } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, TextInput, ImageBackgroundComponent } from 'react-native';
 import React, { useState } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 // import DateTimePicker from '@react-native-community/datetimepicker';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
+ import Screen3 from './Screen3';
 
 
 const DatePicker = () => {
@@ -46,7 +47,7 @@ const DatePicker = () => {
 };
 
 
-export default Screen2 = () => {
+export default Screen2 =() => {
 
  
 
@@ -109,9 +110,31 @@ export default Screen2 = () => {
         <Text style={Styles.view}> View all</Text>
         
         <ScrollView horizontal={true} >
-          <View style={{ flex: 2, justifyContent: 'space-between', flexDirection: 'row' }}>
-            <Text> {"       "}</Text>
-            <Image Style={Styles.img} source={require('./Image/img1.jpeg')} />
+        <View style={{ flex: 2, justifyContent: 'space-between', flexDirection: 'row' }}>
+          <Text> {"       "}</Text>
+
+          <View style={{}}>
+          
+            <Image Style={Styles.img} source={require('./Image/img1.jpeg')} 
+            />
+              <View style={{position:'absolute', marginRight:146,marginHorizontal:240,marginTop:10}}>
+            <Image  source={require('./Image/heart.png')}/>
+            </View>
+              <View  style={{position:'absolute', marginTop:146,marginLeft:10}}>
+                <Text style={{fontWeight:20, fontSize:14}}>Event Name</Text>
+              <Text style={{fontSize:10}}>January 1,2024 - 6:00pm</Text>
+               
+                </View>
+              <View style={{position:'absolute',marginRight:146,marginHorizontal:240, marginVertical:150 }}>
+                    <Image style={{width:20 ,height:20, borderRadius:50}} source={require('./Image/daniel.jpeg')}/>
+                    </View>
+                    <View   style={{position:'absolute',marginRight:150,marginBottom:1,marginHorizontal:215, marginVertical:150 }}>
+                    <Image style={{width:20 ,height:20, borderRadius:50,marginRight:30}} source={require('./Image/gaitree_icon.jpg')}/>
+                  </View>
+              
+
+
+            </View>
             <Text> {"       "}</Text>
             <Image source={require('./Image/img4.jpeg')} />
             <Text> {"       "}</Text>
@@ -139,22 +162,42 @@ export default Screen2 = () => {
 
           <View style={Styles.buttonstyles}>
             <Image style={{ width: 15, height: 15, marginLeft: 15, marginTop: 6 }} source={require('./Image/filter.png')} />
-            <Text style={{ fontSize: 10, alignItems: 'center', marginTop: 6 }}> Filter</Text>
+            <Text style={{ fontSize: 10, alignItems: 'center', marginTop: 6 }}> Filter  {Screen3()}</Text>
+            {/* <Button  style={{backgroundColor:'#191717', position:'absolute'}}onPress={onOpen}></Button> */}
+            {/* <Text style={{marginTop:9.8, marginLeft:2, width:20}}>{Screen3()}</Text> */}
+            
           </View>
           <View style={[Styles.buttonstyles, { width: 110 }]}>
             <Image style={{ width: 15, height: 15, marginLeft: 15, marginTop: 6 }} source={require('./Image/map.png')} />
             <Text style={{ fontSize: 10, alignItems: 'center', marginTop: 6, }}> View ON MAP</Text>
           </View>
-
         </View>
 
 
 
-        <View style={{ flexDirection: 'row', marginTop: 15 }}>
+        <View style={{ flexDirection: 'row', marginTop: 15}}>
           <ScrollView horizontal={true}>
             <Text> {"       "}</Text>
             <Image Style={{ height: 0, width: 0, borderRadius: 8 }} source={require('./Image/img10.jpeg')} />
+            
+              <View style={{position:'absolute',marginRight:149,marginHorizontal:275, marginVertical:158 }}>
+                    <Image style={{width:20 ,height:20, borderRadius:50}} source={require('./Image/daniel.jpeg')}/>
+                    </View>
+                    <View   style={{position:'absolute',marginRight:150,marginBottom:1,marginHorizontal:250, marginVertical:157 }}>
+                    <Image style={{width:20 ,height:20, borderRadius:50,marginRight:30}} source={require('./Image/gaitree_icon.jpg')}/>
+                  </View> 
             <Text> {"       "}</Text>
+
+            <View style={{position:'absolute', marginRight:146,marginHorizontal:269,marginTop:10}}>
+            <Image  source={require('./Image/heart.png')}/>
+            </View>
+
+            <View  style={{position:'absolute', marginTop:146,marginLeft:39}}>
+                <Text style={{fontWeight:20, fontSize:14}}>Event Name</Text>
+              <Text style={{fontSize:10}}>March 4,2024 - 7:00pm</Text>
+              </View>
+
+
             <Image Style={{ height: 0, width: 30, borderRadius: 8 }} source={require('./Image/img1.jpeg')} />
             <Text> {"       "}</Text>
             <Image Style={{ height: 0, width: 0, borderRadius: 8 }} source={require('./Image/img4.jpeg')} />
@@ -212,7 +255,8 @@ const Styles = StyleSheet.create({
     borderRadius: 4, marginLeft: 10,
     margin: 10
 
-  }
+  },
+  
 }
 
 );

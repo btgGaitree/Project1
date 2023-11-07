@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator} from '@react-navigation/native-stack';
 
 
+
 import Screen1 from './file/Screen'; 
 
 import Screen2 from './file/Second';
@@ -30,6 +31,7 @@ const Stack =createNativeStackNavigator();
 
      <Stack.Screen name=" First" component={Screen1}/> 
      <Stack.Screen name="Screen2" component={Screen2}/> 
+    
      
 
     </Stack.Navigator>
